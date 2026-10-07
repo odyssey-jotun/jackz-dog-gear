@@ -157,6 +157,60 @@ img.on-white { background: var(--white); }
   .reviews-layout { grid-template-columns: 1fr; gap: 32px; }
   .reviews-layout .split-photo { max-width: 420px; }
 }
+
+/* Festive layer */
+:root { --lav: #ece4f8; --lav-deep: #6b4bb8; --mint: #dcf2e8; --sun: #ffe08a; --sun-pale: #fff4cf; --pink-mid: #f7c6d8; }
+.trust { background: var(--ink); color: #f3efe8; font: 700 14px/1.3 var(--font-body); letter-spacing: .02em; }
+.trust ul { list-style: none; margin: 0 auto; padding: 12px var(--gutter); max-width: var(--measure); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 36px; }
+.trust li { display: inline-flex; align-items: center; gap: 8px; }
+.trust .icon { width: 18px; height: 18px; color: var(--sun); }
+.hero { background: radial-gradient(circle at 85% 20%, var(--pink-mid) 0, transparent 38%), radial-gradient(circle at 10% 90%, var(--sun-pale) 0, transparent 40%), var(--cream); }
+.hl { background: linear-gradient(transparent 62%, var(--sun) 62%, var(--sun) 92%, transparent 92%); padding: 0 .08em; }
+.collage { position: relative; padding: 20px 28px 60px 0; }
+.collage .main { border-radius: var(--radius-hero); width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; object-position: 50% 30%; box-shadow: 0 18px 40px rgba(29,42,44,.18); }
+.polaroid { position: absolute; background: var(--white); padding: 8px 8px 10px; border-radius: 14px; box-shadow: 0 12px 28px rgba(29,42,44,.22); }
+.polaroid img { border-radius: 8px; width: 100%; display: block; }
+.polaroid--a { width: 38%; left: -7%; bottom: 0; transform: rotate(-7deg); }
+.polaroid--b { width: 30%; right: 0; top: -4%; transform: rotate(6deg); }
+.sticker { position: absolute; display: grid; place-items: center; text-align: center; border-radius: 50%; font: 800 15px/1.1 var(--font-display); letter-spacing: -.01em; box-shadow: 0 8px 18px rgba(29,42,44,.18); padding: 14px; }
+.sticker--pink { background: var(--pink); color: var(--white); }
+.sticker--sun { background: var(--sun); color: var(--ink); }
+.sticker--lav { background: var(--lav-deep); color: var(--white); }
+.collage .sticker { width: 118px; height: 118px; right: 4%; bottom: 8%; transform: rotate(-12deg); }
+.photo-wrap { position: relative; }
+.photo-wrap .sticker { width: 112px; height: 112px; top: -22px; right: -14px; transform: rotate(10deg); }
+.band--lav { background: var(--lav); }
+.band--mint { background: var(--mint); }
+.band--pink { background: #fde7ef; }
+.band--sun { background: var(--sun-pale); }
+.paws { display: flex; gap: 10px; margin-bottom: 14px; color: var(--pink); }
+.paws svg { width: 22px; height: 22px; }
+.paws svg:nth-child(2) { transform: translateY(-6px) rotate(14deg); opacity: .8; }
+.paws svg:nth-child(3) { transform: rotate(-8deg); opacity: .6; }
+.paws--center { justify-content: center; }
+.feature-grid li:nth-child(4n+2) .icon { background: var(--teal-pale); color: var(--teal); }
+.feature-grid li:nth-child(4n+3) .icon { background: var(--lav); color: var(--lav-deep); }
+.feature-grid li:nth-child(4n+4) .icon { background: var(--sun-pale); color: #8a5a00; }
+.feature-grid li { box-shadow: 0 4px 0 rgba(29,42,44,.06); }
+.wear figure:first-child img { transform: rotate(-2deg); }
+.wear figure:last-child img { transform: rotate(2deg); }
+.crew-band { background: var(--ink); color: #f3efe8; padding: 88px 0 0; text-align: center; }
+.crew-band h2 { color: var(--white); }
+.crew-band p { max-width: 58ch; margin: 0 auto; color: #d6ddd9; }
+.crew-band .paws { color: var(--sun); }
+.mosaic { display: grid; grid-template-columns: repeat(8, 1fr); margin-top: 48px; }
+.mosaic img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.band--pink blockquote:nth-child(odd) { transform: rotate(-.6deg); }
+.band--pink blockquote:nth-child(even) { transform: rotate(.6deg); border-left-color: var(--teal); }
+.stars--big { font-size: 26px; }
+@media (max-width: 900px) {
+  .collage { padding: 10px 14px 44px 14px; }
+  .collage .sticker { width: 96px; height: 96px; font-size: 13px; }
+  .polaroid--a { left: -2%; }
+  .mosaic { grid-template-columns: repeat(4, 1fr); }
+  .photo-wrap .sticker { width: 92px; height: 92px; font-size: 13px; right: -6px; }
+  .trust ul { gap: 6px 20px; font-size: 13px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -245,7 +299,19 @@ img.on-white { background: var(--white); }
   <symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/></symbol>
   <symbol id="i-arrows" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></symbol>
   <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></symbol>
+  <symbol id="i-pawprint" viewBox="0 0 24 24"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></symbol>
+  <symbol id="i-pawfill" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><ellipse cx="6" cy="9.5" rx="2.1" ry="2.6"/><ellipse cx="10.2" cy="5.6" rx="2.1" ry="2.7"/><ellipse cx="15" cy="5.6" rx="2.1" ry="2.7"/><ellipse cx="19" cy="9.6" rx="2.1" ry="2.6"/><path d="M12.6 11.2c2.7 0 6.1 4.4 6.1 7 0 1.9-1.6 2.6-3.1 2.6-1.3 0-2-.7-3-.7s-1.8.7-3.1.7c-1.6 0-3.1-.7-3.1-2.6 0-2.6 3.5-7 6.2-7z"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
 </svg>
+
+<div class="trust" role="note">
+  <ul>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-pawprint"/></svg>Designed by a dog trainer</li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Woman-owned in Northwest Arkansas</li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>4.7 stars on Amazon</li>
+  </ul>
+</div>
 
 <header class="site-header">
   <div class="wrap">
@@ -259,7 +325,7 @@ img.on-white { background: var(--white); }
     <div class="wrap">
       <div class="hero-copy">
         <p class="hero-brand">THE JACKZ TREAT POUCH</p>
-        <h1>Treat Bags</h1>
+        <h1><span class="hl">Treat</span> Bags</h1>
         <p class="hero-sub">A treat pouch built for real life with dogs, designed by a dog trainer with 35 years of experience.</p>
         <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> Rated 4.7 out of 5 stars by 53 Amazon customers</p>
         <div class="btn-row">
@@ -267,20 +333,24 @@ img.on-white { background: var(--white); }
           <a class="btn btn--secondary" href="#liner">See the Removable Liner</a>
         </div>
       </div>
-      <div class="hero-photo">
-        <img src="../img/treat-bags/courtney-sanderson-wearing-jackz-treat-bag.webp" width="733" height="864" fetchpriority="high"
+      <div class="hero-photo collage">
+        <img class="main" src="../img/treat-bags/courtney-sanderson-wearing-jackz-treat-bag.webp" width="733" height="864" fetchpriority="high"
              alt="Courtney Sanderson wearing her green JACKZ treat pouch at her waist while walking her Australian shepherd on a pink long line">
+        <div class="polaroid polaroid--a"><img src="../img/treat-bags/jackz-treat-bag-green-product.webp" width="1000" height="783" alt="The green JACKZ treat pouch"></div>
+        <div class="polaroid polaroid--b"><img src="../img/crew/australian-shepherd-portrait-square.webp" width="600" height="600" alt="Courtney's blue merle Australian shepherd"></div>
+        <div class="sticker sticker--sun" aria-hidden="true">Fridge-friendly liner!</div>
       </div>
     </div>
   </section>
 
-  <section class="band band--alt" aria-labelledby="problem">
+  <section class="band band--lav" aria-labelledby="problem">
     <div class="wrap split">
       <div class="split-photo reveal">
         <img src="../img/treat-bags/australian-shepherd-pink-long-line-walk.webp" width="1017" height="861" loading="lazy"
              alt="An Australian shepherd trotting beside its handler on a pink long line across a dry field">
       </div>
       <div class="prose reveal">
+        <div class="paws" aria-hidden="true"><svg><use href="#i-pawfill"/></svg><svg><use href="#i-pawfill"/></svg><svg><use href="#i-pawfill"/></svg></div>
         <h2 id="problem">Most Treat Pouches Are a Pain to Keep Clean</h2>
         <p>Dog people carry treats everywhere, and the pouch takes the beating.</p>
         <ul class="icon-list">
@@ -308,7 +378,7 @@ img.on-white { background: var(--white); }
     </div>
   </section>
 
-  <section class="band band--alt" aria-labelledby="plan">
+  <section class="band band--sun" aria-labelledby="plan">
     <div class="wrap split">
       <div class="split-photo reveal">
         <img src="../img/treat-bags/jackz-treat-bag-australian-shepherd-walk.webp" width="1000" height="713" loading="lazy"
@@ -330,7 +400,8 @@ img.on-white { background: var(--white); }
 
   <section class="band" id="liner" aria-labelledby="liner-h">
     <div class="wrap split split--flip">
-      <div class="split-photo reveal">
+      <div class="split-photo reveal photo-wrap">
+        <div class="sticker sticker--pink" aria-hidden="true">Top-rack dishwasher safe!</div>
         <img src="../img/treat-bags/jackz-treat-bag-removable-liner.webp" width="1000" height="681" loading="lazy"
              alt="Hands holding the JACKZ treat pouch open to show the gray removable treat liner inside">
       </div>
@@ -347,9 +418,10 @@ img.on-white { background: var(--white); }
     </div>
   </section>
 
-  <section class="band band--alt" aria-labelledby="features">
+  <section class="band band--mint" aria-labelledby="features">
     <div class="wrap">
       <div class="features-head">
+        <div class="paws paws--center" aria-hidden="true"><svg><use href="#i-pawfill"/></svg><svg><use href="#i-pawfill"/></svg><svg><use href="#i-pawfill"/></svg></div>
         <h2 id="features">Room for Everything a Walk Needs</h2>
       </div>
       <div class="wear reveal">
@@ -385,7 +457,25 @@ img.on-white { background: var(--white); }
     </div>
   </section>
 
-  <section class="band band--alt" aria-labelledby="reviews">
+    <section class="crew-band" aria-labelledby="crew">
+    <div class="wrap reveal">
+      <div class="paws paws--center" aria-hidden="true"><svg><use href="#i-pawfill"/></svg><svg><use href="#i-pawfill"/></svg><svg><use href="#i-pawfill"/></svg></div>
+      <h2 id="crew">Field-Tested by Courtney's Crew</h2>
+      <p>Three standard poodles and an Australian shepherd carry this pouch through barn hunt, scent work, dock diving and muddy creek walks.</p>
+    </div>
+    <div class="mosaic">
+      <img src="../img/crew/australian-shepherd-kennel-club-ribbons.webp" width="600" height="600" loading="lazy" alt="An Australian shepherd wearing kennel club ribbons">
+      <img src="../img/crew/black-standard-poodle-creek.webp" width="600" height="600" loading="lazy" alt="A wet black standard poodle on a creek bank">
+      <img src="../img/crew/australian-shepherd-scent-work.webp" width="600" height="600" loading="lazy" alt="An Australian shepherd tracking a scent beside a hay bale">
+      <img src="../img/crew/silver-standard-poodle-nap.webp" width="600" height="600" loading="lazy" alt="A silver standard poodle napping">
+      <img src="../img/crew/australian-shepherd-ribbon-stand.webp" width="600" height="600" loading="lazy" alt="An Australian shepherd posing with a pile of dog sports ribbons">
+      <img src="../img/crew/poodle-australian-shepherd-bed.webp" width="600" height="600" loading="lazy" alt="An Australian shepherd and a standard poodle on a plaid bed">
+      <img src="../img/crew/standard-poodles-australian-shepherd-hallway.webp" width="600" height="600" loading="lazy" alt="Three standard poodles and an Australian shepherd crowding a hallway">
+      <img src="../img/crew/australian-shepherd-portrait-square.webp" width="600" height="600" loading="lazy" alt="A blue merle Australian shepherd sitting in the grass">
+    </div>
+  </section>
+
+  <section class="band band--pink" aria-labelledby="reviews">
     <div class="wrap reviews-layout">
       <div class="split-photo reveal">
         <img src="../img/treat-bags/jackz-treat-bag-standard-poodle-training.webp" width="880" height="960" loading="lazy"
@@ -393,7 +483,7 @@ img.on-white { background: var(--white); }
       </div>
       <div>
         <h2 id="reviews">What Handlers Say After Training With It</h2>
-        <p class="rating rating--left"><span class="stars" aria-hidden="true">★★★★★</span> 4.7 out of 5 stars from 53 Amazon ratings</p>
+        <p class="rating rating--left"><span class="stars stars--big" aria-hidden="true">★★★★★</span> 4.7 out of 5 stars from 53 Amazon ratings</p>
         <div class="quotes">
           <blockquote class="reveal"><p>“The removable treat pouch that is magnetic closure is genius. You can pop it out and put it in the refrigerator and when it is dirty, you can wash just the treat pouch.”</p><footer>William, verified Amazon purchase</footer></blockquote>
           <blockquote class="reveal"><p>“This bag has seriously made training my puppy so much easier. I use it every time we practice tricks, and I love how I can just snap out the treat pocket and clean it without any mess.”</p><footer>Madison Sexton, verified Amazon purchase</footer></blockquote>
@@ -425,7 +515,8 @@ img.on-white { background: var(--white); }
 
   <section class="band band--teal" aria-labelledby="order">
     <div class="wrap split">
-      <div class="split-photo reveal">
+      <div class="split-photo reveal photo-wrap">
+        <div class="sticker sticker--lav" aria-hidden="true">Fits XS to 3XL</div>
         <img src="../img/treat-bags/jackz-treat-bag-green-product.webp" width="1000" height="783" loading="lazy" class="on-white"
              alt="The green JACKZ treat pouch">
       </div>
