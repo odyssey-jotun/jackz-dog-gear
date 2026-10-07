@@ -9,6 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230e5a5a%22/%3E%3Ctext x=%2216%22 y=%2223%22 text-anchor=%22middle%22 font-family=%22Arial Black,Arial%22 font-weight=%22900%22 font-size=%2219%22 fill=%22%23fff%22%3EJ%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
 <style>
 @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 200 800; font-display: swap; src: url(fonts/bricolage-grotesque-latin.woff2) format("woff2"); }
 @font-face { font-family: "Figtree"; font-style: normal; font-weight: 300 900; font-display: swap; src: url(fonts/figtree-latin.woff2) format("woff2"); }
@@ -107,8 +108,8 @@ details p { padding: 0 0 22px; max-width: var(--measure-text); }
 .site-footer .wordmark span { color: #f48fb1; }
 
 /* Motion */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .btn, summary .icon { transition: none; } html { scroll-behavior: auto; } }
 
 @media (max-width: 900px) {
@@ -336,7 +337,7 @@ details p { padding: 0 0 22px; max-width: var(--measure-text); }
 <script>
 (function () {
   var els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  if (!('IntersectionObserver' in window)) { document.documentElement.classList.remove('js'); return; }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
