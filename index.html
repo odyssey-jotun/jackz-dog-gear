@@ -127,6 +127,30 @@ details p { padding: 0 0 22px; max-width: var(--measure-text); }
   .site-header .btn { display: none; }
   .btn-row .btn { width: 100%; }
 }
+
+/* Site nav */
+.site-nav { display: flex; align-items: center; gap: 4px 22px; flex-wrap: wrap; }
+.site-nav a { font: 700 16px/1.2 var(--font-body); color: var(--ink); text-decoration: none; padding: 8px 2px; border-bottom: 2px solid transparent; transition: border-color .15s, color .15s; }
+.site-nav a:hover { color: var(--pink); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--pink); }
+.site-header .wrap { flex-wrap: wrap; }
+.header-right { display: flex; align-items: center; gap: 22px; }
+.footer-nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-nav a { color: #e9eeec; font-weight: 600; text-decoration: none; }
+.footer-nav a:hover { color: #f48fb1; }
+@media (max-width: 760px) {
+  .site-header .wrap { padding-top: 10px; padding-bottom: 6px; min-height: 0; row-gap: 2px; }
+  .header-right { width: 100%; justify-content: center; }
+  .site-header .wordmark { width: 100%; text-align: center; }
+  .site-nav { justify-content: center; gap: 0 18px; }
+  .site-nav a { font-size: 15px; }
+}
+
+.trust { background: var(--ink); color: #f3efe8; font: 700 14px/1.3 var(--font-body); letter-spacing: .02em; }
+.trust ul { list-style: none; margin: 0 auto; padding: 12px var(--gutter); max-width: var(--measure); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 36px; }
+.trust li { display: inline-flex; align-items: center; gap: 8px; }
+.trust .icon { width: 18px; height: 18px; color: #ffe08a; }
+@media (max-width: 900px) { .trust ul { gap: 6px 20px; font-size: 13px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -155,12 +179,30 @@ details p { padding: 0 0 22px; max-width: var(--measure-text); }
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
   <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-pawprint" viewBox="0 0 24 24"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
 </svg>
+
+<div class="trust" role="note">
+  <ul>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-pawprint"/></svg>Designed by a dog trainer</li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Woman-owned in Northwest Arkansas</li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>4.7 stars on Amazon</li>
+  </ul>
+</div>
 
 <header class="site-header">
   <div class="wrap">
     <a class="wordmark" href="./">JACK<span>Z</span></a>
-    <a class="btn btn--primary" href="#training">Schedule a Training Session</a>
+    <div class="header-right">
+      <nav class="site-nav" aria-label="Main">
+        <a href="./" aria-current="page">Home</a>
+        <a href="treat-bags/">Treat Bags</a>
+        <a href="#training">Barn Hunt Training</a>
+      </nav>
+      <a class="btn btn--primary" href="#training">Schedule a Training Session</a>
+    </div>
   </div>
 </header>
 
@@ -327,6 +369,11 @@ details p { padding: 0 0 22px; max-width: var(--measure-text); }
 <footer class="site-footer">
   <div class="wrap">
     <a class="wordmark" href="./">JACK<span>Z</span></a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="./">Home</a>
+      <a href="treat-bags/">Treat Bags</a>
+      <a href="#training">Barn Hunt Training</a>
+    </nav>
     <p>Woman-owned dog gear and training in Northwest Arkansas.</p>
   </div>
 </footer>

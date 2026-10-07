@@ -211,6 +211,24 @@ img.on-white { background: var(--white); }
   .photo-wrap .sticker { width: 92px; height: 92px; font-size: 13px; right: -6px; }
   .trust ul { gap: 6px 20px; font-size: 13px; }
 }
+
+/* Site nav */
+.site-nav { display: flex; align-items: center; gap: 4px 22px; flex-wrap: wrap; }
+.site-nav a { font: 700 16px/1.2 var(--font-body); color: var(--ink); text-decoration: none; padding: 8px 2px; border-bottom: 2px solid transparent; transition: border-color .15s, color .15s; }
+.site-nav a:hover { color: var(--pink); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--pink); }
+.site-header .wrap { flex-wrap: wrap; }
+.header-right { display: flex; align-items: center; gap: 22px; }
+.footer-nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-nav a { color: #e9eeec; font-weight: 600; text-decoration: none; }
+.footer-nav a:hover { color: #f48fb1; }
+@media (max-width: 760px) {
+  .site-header .wrap { padding-top: 10px; padding-bottom: 6px; min-height: 0; row-gap: 2px; }
+  .header-right { width: 100%; justify-content: center; }
+  .site-header .wordmark { width: 100%; text-align: center; }
+  .site-nav { justify-content: center; gap: 0 18px; }
+  .site-nav a { font-size: 15px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -316,7 +334,14 @@ img.on-white { background: var(--white); }
 <header class="site-header">
   <div class="wrap">
     <a class="wordmark" href="../">JACK<span>Z</span></a>
-    <a class="btn btn--primary" href="https://www.amazon.com/dp/B0DPM1HGKF" rel="noopener">Buy on Amazon</a>
+    <div class="header-right">
+      <nav class="site-nav" aria-label="Main">
+        <a href="../">Home</a>
+        <a href="../treat-bags/" aria-current="page">Treat Bags</a>
+        <a href="../#training">Barn Hunt Training</a>
+      </nav>
+      <a class="btn btn--primary" href="https://www.amazon.com/dp/B0DPM1HGKF" rel="noopener">Buy on Amazon</a>
+    </div>
   </div>
 </header>
 
@@ -534,6 +559,11 @@ img.on-white { background: var(--white); }
 <footer class="site-footer">
   <div class="wrap">
     <a class="wordmark" href="../">JACK<span>Z</span></a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="../">Home</a>
+      <a href="../treat-bags/">Treat Bags</a>
+      <a href="../#training">Barn Hunt Training</a>
+    </nav>
     <p>Woman-owned dog gear and training in Northwest Arkansas.</p>
   </div>
 </footer>
